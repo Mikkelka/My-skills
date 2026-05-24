@@ -14,6 +14,11 @@ This is the master skill that provides an overview of all available specialized 
 - **Trigger:** "setup expo", "create react native app", "mobile app"
 - **What it does:** Sets up Expo SDK 54 with Expo Router, tab navigation, correct package versions, and avoids common dependency conflicts
 
+### Grill Me
+- **File:** `.well-known/skills/grill-me/SKILL.md`
+- **Trigger:** "grill me", "stress test my plan", "interview me about my design"
+- **What it does:** Relentlessly interviews you about a plan or design until reaching shared understanding, resolving each branch of the decision tree
+
 ## How to Add New Skills
 
 1. Create a folder: `.well-known/skills/<skill-name>/`
