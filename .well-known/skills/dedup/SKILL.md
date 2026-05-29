@@ -5,7 +5,7 @@ description: Use when user says "find duplicates", "dedup", "remove duplicates",
 
 # Deduplication Review
 
-Scan the codebase for duplicated and near-duplicated code. Write findings to `CODE_REVIEW.md` in the project root.
+Scan the codebase for duplicated and near-duplicated code. Write findings to `dedupReview.md` in the project root.
 
 ## What to look for
 
@@ -18,7 +18,7 @@ Scan the codebase for duplicated and near-duplicated code. Write findings to `CO
 
 ## Steps
 
-1. If `CODE_REVIEW.md` exists in the project root, read it first to see previous findings
+1. If `dedupReview.md` exists in the project root, read it first to see previous findings
 2. Scan all source files (exclude `node_modules`, `dist`, `build`, `.next`, `.expo`)
 3. Look for functions, blocks, or patterns that appear in 2+ locations
 4. For near-duplicates, suggest how they can be merged (parameterize, extract, etc.)
@@ -27,7 +27,7 @@ Scan the codebase for duplicated and near-duplicated code. Write findings to `CO
 
 ## Output format
 
-Write `CODE_REVIEW.md` to project root:
+Write `dedupReview.md` to project root:
 
 ```markdown
 # Deduplication Review

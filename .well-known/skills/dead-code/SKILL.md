@@ -5,7 +5,7 @@ description: Use when user says "clean up", "find dead code", "remove unused", "
 
 # Dead Code Removal
 
-Scan the codebase and remove unused code. Write findings to `CODE_REVIEW.md` in the project root.
+Scan the codebase and remove unused code. Write findings to `deadCodeReview.md` in the project root.
 
 ## What to look for
 
@@ -18,7 +18,7 @@ Scan the codebase and remove unused code. Write findings to `CODE_REVIEW.md` in 
 
 ## Steps
 
-1. If `CODE_REVIEW.md` exists in the project root, read it first to see previous findings
+1. If `deadCodeReview.md` exists in the project root, read it first to see previous findings
 2. Scan all source files (exclude `node_modules`, `dist`, `build`, `.next`, `.expo`)
 3. For each file, check for unused imports, variables, and functions
 4. Cross-reference: if a function/export is not imported anywhere, flag it
@@ -27,7 +27,7 @@ Scan the codebase and remove unused code. Write findings to `CODE_REVIEW.md` in 
 
 ## Output format
 
-Write `CODE_REVIEW.md` to project root:
+Write `deadCodeReview.md` to project root:
 
 ```markdown
 # Dead Code Review

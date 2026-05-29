@@ -5,7 +5,7 @@ description: Use when user says "performance check", "check performance", "perf 
 
 # Performance Review
 
-Scan the codebase for performance issues. Write findings to `CODE_REVIEW.md` in the project root.
+Scan the codebase for performance issues. Write findings to `performanceReview.md` in the project root.
 
 ## What to look for
 
@@ -21,7 +21,7 @@ Scan the codebase for performance issues. Write findings to `CODE_REVIEW.md` in 
 
 ## Steps
 
-1. If `CODE_REVIEW.md` exists in the project root, read it first to see previous findings
+1. If `performanceReview.md` exists in the project root, read it first to see previous findings
 2. Scan all source files (exclude `node_modules`, `dist`, `build`, `.next`, `.expo`)
 3. Check for common performance anti-patterns
 4. Rate severity: high (noticeable impact), medium (potential impact), low (minor optimization)
@@ -30,7 +30,7 @@ Scan the codebase for performance issues. Write findings to `CODE_REVIEW.md` in 
 
 ## Output format
 
-Write `CODE_REVIEW.md` to project root:
+Write `performanceReview.md` to project root:
 
 ```markdown
 # Performance Review

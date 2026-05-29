@@ -5,7 +5,7 @@ description: Use when user says "quality check", "clean code", "code quality", "
 
 # Code Quality Review
 
-Scan the codebase for quality issues. Write findings to `CODE_REVIEW.md` in the project root.
+Scan the codebase for quality issues. Write findings to `codeQualityReview.md` in the project root.
 
 ## What to look for
 
@@ -20,7 +20,7 @@ Scan the codebase for quality issues. Write findings to `CODE_REVIEW.md` in the 
 
 ## Steps
 
-1. If `CODE_REVIEW.md` exists in the project root, read it first to see previous findings
+1. If `codeQualityReview.md` exists in the project root, read it first to see previous findings
 2. Scan all source files (exclude `node_modules`, `dist`, `build`, `.next`, `.expo`)
 3. Check each file for the issues above
 4. Rate severity: high (bug risk), medium (maintainability), low (style)
@@ -29,7 +29,7 @@ Scan the codebase for quality issues. Write findings to `CODE_REVIEW.md` in the 
 
 ## Output format
 
-Write `CODE_REVIEW.md` to project root:
+Write `codeQualityReview.md` to project root:
 
 ```markdown
 # Code Quality Review

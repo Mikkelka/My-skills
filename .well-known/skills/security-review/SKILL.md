@@ -5,7 +5,7 @@ description: Use when user says "security check", "security review", "check secu
 
 # Security Review
 
-Scan the codebase for security vulnerabilities. Write findings to `CODE_REVIEW.md` in the project root.
+Scan the codebase for security vulnerabilities. Write findings to `securityReview.md` in the project root.
 
 ## What to look for
 
@@ -21,7 +21,7 @@ Scan the codebase for security vulnerabilities. Write findings to `CODE_REVIEW.m
 
 ## Steps
 
-1. If `CODE_REVIEW.md` exists in the project root, read it first to see previous findings
+1. If `securityReview.md` exists in the project root, read it first to see previous findings
 2. Scan all source files (exclude `node_modules`, `dist`, `build`, `.next`, `.expo`)
 3. Check for OWASP top 10 issues
 4. Rate severity: critical (exploitable now), high (exploitable with effort), medium (potential risk), low (best practice)
@@ -30,7 +30,7 @@ Scan the codebase for security vulnerabilities. Write findings to `CODE_REVIEW.m
 
 ## Output format
 
-Write `CODE_REVIEW.md` to project root:
+Write `securityReview.md` to project root:
 
 ```markdown
 # Security Review
