@@ -9,6 +9,11 @@ Personal collection of opencode skills for common development workflows.
 | [all-skills](.well-known/skills/all-skills/SKILL.md) | Master index - links to all available skills |
 | [expo-setup](.well-known/skills/expo-setup/SKILL.md) | Setup Expo React Native projects with correct SDK 54 packages, tab navigation, and common pitfalls to avoid |
 | [grill-me](.well-known/skills/grill-me/SKILL.md) | Relentlessly interview you about a plan or design until reaching shared understanding |
+| [dead-code](.well-known/skills/dead-code/SKILL.md) | Find unused imports, dead functions, unreachable code |
+| [dedup](.well-known/skills/dedup/SKILL.md) | Find exact/near duplicate code and similar patterns |
+| [code-quality](.well-known/skills/code-quality/SKILL.md) | Naming, complexity, error handling, type safety |
+| [security-review](.well-known/skills/security-review/SKILL.md) | Hardcoded secrets, injection, XSS, missing auth |
+| [performance-review](.well-known/skills/performance-review/SKILL.md) | Re-renders, N+1 queries, bundle size, memory leaks |
 
 ## Install on a New Computer
 
@@ -42,7 +47,17 @@ Create a new folder under `.well-known/skills/<name>/` with a `SKILL.md` file:
 
 ```
 .well-known/skills/
+├── code-quality/
+│   └── SKILL.md
+├── dead-code/
+│   └── SKILL.md
+├── dedup/
+│   └── SKILL.md
 ├── expo-setup/
+│   └── SKILL.md
+├── performance-review/
+│   └── SKILL.md
+├── security-review/
 │   └── SKILL.md
 └── my-new-skill/
     └── SKILL.md

@@ -19,6 +19,28 @@ This is the master skill that provides an overview of all available specialized 
 - **Trigger:** "grill me", "stress test my plan", "interview me about my design"
 - **What it does:** Relentlessly interviews you about a plan or design until reaching shared understanding, resolving each branch of the decision tree
 
+### Code Review Skills
+
+- **Dead Code** — `.well-known/skills/dead-code/SKILL.md`
+  - Trigger: "clean up", "find dead code", "remove unused"
+  - Finds unused imports, dead functions, unreachable code, commented-out code
+
+- **Dedup** — `.well-known/skills/dedup/SKILL.md`
+  - Trigger: "find duplicates", "dedup", "refactor duplicates"
+  - Finds exact/near duplicates, similar patterns, duplicated types
+
+- **Code Quality** — `.well-known/skills/code-quality/SKILL.md`
+  - Trigger: "quality check", "clean code", "code quality"
+  - Checks naming, complexity, error handling, type safety, patterns
+
+- **Security Review** — `.well-known/skills/security-review/SKILL.md`
+  - Trigger: "security check", "security review"
+  - Finds hardcoded secrets, injection, XSS, missing auth, insecure deps
+
+- **Performance Review** — `.well-known/skills/performance-review/SKILL.md`
+  - Trigger: "performance check", "perf review", "optimize"
+  - Finds re-renders, N+1 queries, bundle size, memory leaks, missing caching
+
 ## How to Add New Skills
 
 1. Create a folder: `.well-known/skills/<skill-name>/`
