@@ -20,48 +20,48 @@ Scan the codebase for quality issues. Write findings to `codeQualityReview.md` i
 
 ## Steps
 
-1. If `codeQualityReview.md` exists in the project root, read it first to see previous findings
+1. If `codeQualityReview.md` exists in the project root, read it to see previous findings and history
 2. Scan all source files (exclude `node_modules`, `dist`, `build`, `.next`, `.expo`)
 3. Check each file for the issues above
 4. Rate severity: high (bug risk), medium (maintainability), low (style)
-5. Compare new findings with previous report — note which are new and which are still open
-6. Write findings to `CODE_REVIEW.md` with file path, line number, severity, and suggestion
+5. Compare new findings with previous report — categorize as new, still open, or fixed
+6. Write findings to `codeQualityReview.md` using the format below
 
 ## Output format
 
-Write `codeQualityReview.md` to project root:
+Write `codeQualityReview.md` to project root. Each new review is prepended at the top with a dated section. Previous reviews stay as history below.
 
 ```markdown
 # Code Quality Review
 
-**Date:** YYYY-MM-DD
-**Scope:** <what was scanned>
+## Status (YYYY-MM-DD)
 
-## Summary
+| Metric | Count |
+|--------|-------|
+| Open | |
+| Fixed since last | |
+| New | |
 
-| Category | High | Medium | Low | Total |
-|----------|------|--------|-----|-------|
-| Naming | | | | |
-| Complexity | | | | |
-| Error handling | | | | |
-| Type safety | | | | |
-| Patterns | | | | |
-| **Total** | | | | |
+---
 
-## Findings
+## YYYY-MM-DD
 
-### High severity
+### New findings
 - `src/api/handler.ts:45` — empty catch block, errors silently swallowed
-- `src/utils/parser.ts:12` — uses `any` type, breaks type safety
 
-### Medium severity
+### Still open (from YYYY-MM-DD)
 - `src/components/Dashboard.tsx:80` — function is 120 lines, should be split
-- `src/services/auth.ts:15` — variable `x` is unclear, rename to `authToken`
 
-### Low severity
-- `src/constants.ts:5` — magic number `86400`, extract to `SECONDS_PER_DAY`
+### Fixed since YYYY-MM-DD
+- ~~`src/services/auth.ts:15` — variable `x` is unclear~~
 
-...
+---
+
+## YYYY-MM-DD (previous)
+
+### Findings
+- `src/api/handler.ts:45` — empty catch block, errors silently swallowed
+- `src/components/Dashboard.tsx:80` — function is 120 lines, should be split
 ```
 
 ## Notes
@@ -69,4 +69,6 @@ Write `codeQualityReview.md` to project root:
 - Do NOT fix code automatically — only report findings
 - Prioritize findings by severity (high first)
 - Include concrete suggestions for each finding
-- If a previous report exists, include a "Status" section showing: fixed since last review, still open, and new findings
+- The Status section always reflects the latest review
+- New reviews are prepended — keep previous reviews as history below
+- Use ~~strikethrough~~ for fixed findings in previous sections

@@ -18,48 +18,54 @@ Scan the codebase and remove unused code. Write findings to `deadCodeReview.md` 
 
 ## Steps
 
-1. If `deadCodeReview.md` exists in the project root, read it first to see previous findings
+1. If `deadCodeReview.md` exists in the project root, read it to see previous findings and history
 2. Scan all source files (exclude `node_modules`, `dist`, `build`, `.next`, `.expo`)
 3. For each file, check for unused imports, variables, and functions
 4. Cross-reference: if a function/export is not imported anywhere, flag it
-5. Compare new findings with previous report — note which are new and which are still open
-6. Write findings to `CODE_REVIEW.md` with file path, line number, and what is unused
+5. Compare new findings with previous report — categorize as new, still open, or fixed
+6. Write findings to `deadCodeReview.md` using the format below
 
 ## Output format
 
-Write `deadCodeReview.md` to project root:
+Write `deadCodeReview.md` to project root. Each new review is prepended at the top with a dated section. Previous reviews stay as history below.
 
 ```markdown
 # Dead Code Review
 
-**Date:** YYYY-MM-DD
-**Scope:** <what was scanned>
+## Status (YYYY-MM-DD)
 
-## Summary
+| Metric | Count |
+|--------|-------|
+| Open | |
+| Fixed since last | |
+| New | |
 
-| Category | Count |
-|----------|-------|
-| Unused imports | |
-| Dead functions | |
-| Unused variables | |
-| Unreachable code | |
-| Commented-out code | |
-| **Total** | |
+---
 
-## Findings
+## YYYY-MM-DD
 
-### Unused imports
-- `path/to/file.ts:12` — `useState` imported but never used
+### New findings
+- `path/to/file.ts:12` — unused import `useState`
 
-### Dead functions
-- `path/to/file.ts:45` — `calculateTotal()` defined but never called
+### Still open (from YYYY-MM-DD)
+- `path/to/file.ts:45` — dead function `calculateTotal()`
 
-...
+### Fixed since YYYY-MM-DD
+- ~~`path/to/file.ts:8` — unused variable `temp`~~
+
+---
+
+## YYYY-MM-DD (previous)
+
+### Findings
+- `path/to/file.ts:8` — unused variable `temp`
+- `path/to/file.ts:45` — dead function `calculateTotal()`
 ```
 
 ## Notes
 
 - Do NOT delete code automatically — only report findings
 - If unsure whether something is unused (e.g. re-exports, type exports), mark as "possibly unused" with explanation
-- Include a count of total findings in the summary
-- If a previous report exists, include a "Status" section showing: fixed since last review, still open, and new findings
+- The Status section always reflects the latest review
+- New reviews are prepended — keep previous reviews as history below
+- Use ~~strikethrough~~ for fixed findings in previous sections

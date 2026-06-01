@@ -21,48 +21,48 @@ Scan the codebase for security vulnerabilities. Write findings to `securityRevie
 
 ## Steps
 
-1. If `securityReview.md` exists in the project root, read it first to see previous findings
+1. If `securityReview.md` exists in the project root, read it to see previous findings and history
 2. Scan all source files (exclude `node_modules`, `dist`, `build`, `.next`, `.expo`)
 3. Check for OWASP top 10 issues
 4. Rate severity: critical (exploitable now), high (exploitable with effort), medium (potential risk), low (best practice)
-5. Compare new findings with previous report — note which are new and which are still open
-6. Write findings to `CODE_REVIEW.md` with file path, line number, severity, and fix
+5. Compare new findings with previous report — categorize as new, still open, or fixed
+6. Write findings to `securityReview.md` using the format below
 
 ## Output format
 
-Write `securityReview.md` to project root:
+Write `securityReview.md` to project root. Each new review is prepended at the top with a dated section. Previous reviews stay as history below.
 
 ```markdown
 # Security Review
 
-**Date:** YYYY-MM-DD
-**Scope:** <what was scanned>
+## Status (YYYY-MM-DD)
 
-## Summary
+| Metric | Count |
+|--------|-------|
+| Open | |
+| Fixed since last | |
+| New | |
 
-| Severity | Count |
-|----------|-------|
-| Critical | |
-| High | |
-| Medium | |
-| Low | |
-| **Total** | |
+---
 
-## Findings
+## YYYY-MM-DD
 
-### Critical
+### New findings
 - `src/config/db.ts:5` — database password hardcoded as string literal
 
-### High
-- `src/api/users.ts:30` — SQL query built with string concatenation, vulnerable to injection
+### Still open (from YYYY-MM-DD)
+- `src/api/users.ts:30` — SQL query built with string concatenation
 
-### Medium
-- `src/middleware/auth.ts:15` — token not validated on all routes
+### Fixed since YYYY-MM-DD
+- ~~`src/middleware/auth.ts:15` — token not validated on all routes~~
 
-### Low
-- `src/utils/logger.ts:20` — logs full request body, may include sensitive data
+---
 
-...
+## YYYY-MM-DD (previous)
+
+### Findings
+- `src/config/db.ts:5` — database password hardcoded as string literal
+- `src/api/users.ts:30` — SQL query built with string concatenation
 ```
 
 ## Notes
@@ -70,4 +70,6 @@ Write `securityReview.md` to project root:
 - Do NOT fix code automatically — only report findings
 - If a finding is a false positive risk, note it
 - Include concrete fix suggestions for each finding
-- If a previous report exists, include a "Status" section showing: fixed since last review, still open, and new findings
+- The Status section always reflects the latest review
+- New reviews are prepended — keep previous reviews as history below
+- Use ~~strikethrough~~ for fixed findings in previous sections
