@@ -19,6 +19,11 @@ This is the master skill that provides an overview of all available specialized 
 - **Trigger:** "grill me", "stress test my plan", "interview me about my design"
 - **What it does:** Relentlessly interviews you about a plan or design until reaching shared understanding, resolving each branch of the decision tree
 
+### Caveman
+- **File:** `.well-known/skills/caveman/SKILL.md`
+- **Trigger:** "caveman mode", "talk like caveman", "be brief", "less tokens", "/caveman"
+- **What it does:** Ultra-compressed communication mode that cuts ~75% of tokens while keeping technical accuracy. Supports lite, full, ultra, and wenyan levels
+
 ### Code Review Skills
 
 - **Dead Code** — `.well-known/skills/dead-code/SKILL.md`
